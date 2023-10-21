@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+    <script>
+        function validateForm() {
+           
+            var firstName = document.getElementById("first_name").value;
+            var lastName = document.getElementById("last_name").value;
+            var dob = document.getElementById("dob").value;
+            var country = document.getElementById("country").value;
+            var gender = document.querySelectorAll('input[name="gender"]:checked');
+            var profession = document.getElementById("profession").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+
+            
+            if (firstName === "" || lastName === "" || dob === "" || country === "" || gender.length === 0 || profession === "" || email === "" || mobile === "") {
+                alert("Please fill in all the required fields.");
+                return false;
+            }
+
+            
+            var popupMessage = "First Name: " + firstName + "\n";
+            popupMessage += "Last Name: " + lastName + "\n";
+            popupMessage += "Date of Birth: " + dob + "\n";
+            popupMessage += "Country: " + country + "\n";
+            popupMessage += "Gender: " + gender[0].value + "\n";
+            popupMessage += "Profession: " + profession + "\n";
+            popupMessage += "Email: " + email + "\n";
+            popupMessage += "Mobile Number: " + mobile;
+
+          
+            alert(popupMessage);
+
+            
+            document.getElementById("surveyForm").reset();
+        }
+    </script>
+</head>
+<body>
+    <form id="surveyForm">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" required><br><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" required><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required><br><br>
+
+        <label for="country">Country:</label>
+        <select id="country" required>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <!-- Add more country options -->
+        </select><br><br>
+
+        <label for="gender">Gender:</label>
+        <input type="checkbox" name="gender" value="Male"> Male
+        <input type="checkbox" name="gender" value="Female"> Female
+        <input type="checkbox" name="gender" value="Other"> Other<br><br>
+
+        <label for="profession">Profession:</label>
+        <input type="text" id="profession" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br><br>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" required><br><br>
+
+        <button type="button" onclick="validateForm()">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
