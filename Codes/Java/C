@@ -1,0 +1,27 @@
+public class Pangram {
+
+    public static void main(String[] args) {
+        String sentence = "The quick brown fox jumps over the lazy dog";
+
+        boolean isPangram = isPangram(sentence);
+
+        System.out.println(isPangram);
+    }
+
+    private static boolean isPangram(String sentence) {
+       
+        Set<Character> alphabets = new HashSet<>();
+
+        
+        for (int i = 0; i < sentence.length(); i++) {
+            char currentCharacter = sentence.charAt(i);
+
+            if (Character.isLetter(currentCharacter)) {
+                alphabets.add(Character.toLowerCase(currentCharacter));
+            }
+        }
+
+       
+        return alphabets.size() == 26;
+    }
+}
