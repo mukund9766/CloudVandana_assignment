@@ -1,1 +1,12 @@
+function sortArrayDescending(array) {
+  const compareFunction = (a, b) => b - a;
+  array.sort(compareFunction);
+
+  return array;
+}
+
+const array = [5, 3, 2, 1, 4];
+const sortedArrayDescending = sortArrayDescending(array);
+
+console.log(sortedArrayDescending); 
 
