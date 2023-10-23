@@ -1,1 +1,111 @@
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
 
+    <h1> simple calculator</h1>
+
+    <table class="calculator">
+
+       <tr>
+          <td colspan="3"><input class="display-box" type="text" id="result" disabled></td>
+          <td><input type="button" value="C" onClick="Clear()" id="btn"></td>        
+        </tr>
+
+        <tr>
+        
+          <td> <input type="button" value="1" onclick="display('1')" /> </td>
+          <td> <input type="button" value="2" onclick="display('2')" /> </td>
+          <td> <input type="button" value="3" onclick="display('3')" /> </td>
+          <td> <input type="button" value="/" onclick="display('/')" /> </td>
+        </tr>
+        
+        <tr>
+          <td> <input type="button" value="4" onclick="display('4')" /> </td>
+          <td> <input type="button" value="5" onclick="display('5')" /> </td>
+          <td> <input type="button" value="6" onclick="display('6')" /> </td>
+          <td> <input type="button" value="-" onclick="display('-')" /> </td>
+        </tr>
+
+        <tr>
+          <td> <input type="button" value="7" onclick="display('7')" /> </td>
+          <td> <input type="button" value="8" onclick="display('8')" /> </td>
+          <td> <input type="button" value="9" onclick="display('9')" /> </td>
+          <td> <input type="button" value="+" onclick="display('+')" /> </td>
+        </tr>
+
+        <tr>
+          <td> <input type="button" value="." onclick="display('.')" /> </td>
+          <td> <input type="button" value="0" onclick="display('0')" /> </td>
+     
+          <td> <input type="button" value="=" onclick="calculate()" id="btn" /> </td>
+          <td> <input type="button" value="*" onclick="display('*')" /> </td>
+        </tr>
+
+    </table>
+
+<style>
+        .calculator {
+                    padding: 10px;
+                    border-radius: 1em;
+                    height: 380px;
+                    width: 400px;
+                    margin: auto;
+                    background-color: #191b28
+        }
+
+        .display-box {
+                   font-family: 'Orbitron', sans-serif;
+                   background-color: #dcdbe1;
+                   border: solid black 0.5px;
+                   color: black;
+                   border-radius: 5px;
+                   width: 100%;
+                   height: 65%;
+        }
+
+#btn {
+    background-color: #fb0066;
+}
+
+input[type=button] {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #64278f;
+    color: white;
+    border: solid black 0.5px;
+    width: 100%;
+    border-radius: 5px;
+    height: 70%;
+    outline: none;
+}
+
+input:active[type=button] {
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+</style>
+
+<script>
+
+        function Clear(){
+            document.getElementById("result").value = "";
+        }
+
+        function display(value){
+            document.getElementById("result").value += value;
+        }
+
+        function calculate(){
+            var value1 = document.getElementById("result").value;
+            var value2 = eval(value1);
+            document.getElementById("result").value = value2;
+
+        }
+</script>
+
+</body>
+</html>
